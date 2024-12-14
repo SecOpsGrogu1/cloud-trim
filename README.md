@@ -1,11 +1,11 @@
-# AWS Cost Optimizer
+# CloudTrim - Cloud Cost Optimization Platform
 
-An AI-powered SaaS platform that helps companies optimize their AWS cloud spending through intelligent analysis, automation, and real-time monitoring.
+An AI-powered SaaS platform that helps companies optimize their cloud spending through intelligent analysis, automation, and real-time monitoring.
 
 ## Key Features
 
 ### 🤖 Automated Cost Analysis
-- Real-time monitoring of AWS resource utilization
+- Real-time monitoring of cloud resource utilization
 - Identification of idle and underutilized resources
 - Detailed cost breakdown by service, tag, and department
 
@@ -50,15 +50,19 @@ An AI-powered SaaS platform that helps companies optimize their AWS cloud spendi
 - Redis for caching
 - Celery for background tasks
 
-### AWS Services Used
-- AWS Cost Explorer API
-- CloudWatch for metrics
-- AWS Organizations for multi-account support
-- EC2, RDS, and other service APIs
+### Cloud Provider Support
+- AWS (Amazon Web Services)
+- Azure (Microsoft Azure)
+- GCP (Google Cloud Platform)
 
 ## Setup
 
 1. Clone the repository
+```bash
+git clone https://github.com/SecOpsGrogu1/cloud-trim.git
+cd cloud-trim
+```
+
 2. Install dependencies:
 ```bash
 # Backend
@@ -72,7 +76,7 @@ npm install
 3. Configure environment variables:
 ```bash
 cp .env.example .env
-# Edit .env with your AWS credentials and other settings
+# Edit .env with your cloud provider credentials and other settings
 ```
 
 4. Start the services:
@@ -96,12 +100,19 @@ The application follows a microservices architecture with:
 
 ## Security
 
-- AWS credentials managed securely using IAM roles
+- Cloud credentials managed securely using provider-specific IAM roles
 - JWT-based authentication
-- Role-based access control
-- Regular security audits
-- Encrypted data storage
+- HTTPS encryption for all API endpoints
+- Regular security audits and updates
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
