@@ -3,96 +3,95 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#3B82F6',
+      light: '#60A5FA',
+      dark: '#2563EB',
     },
     secondary: {
-      main: '#9c27b0',
-      light: '#ba68c8',
-      dark: '#7b1fa2',
-    },
-    error: {
-      main: '#d32f2f',
-      light: '#ef5350',
-      dark: '#c62828',
-    },
-    warning: {
-      main: '#ed6c02',
-      light: '#ff9800',
-      dark: '#e65100',
-    },
-    info: {
-      main: '#0288d1',
-      light: '#03a9f4',
-      dark: '#01579b',
-    },
-    success: {
-      main: '#2e7d32',
-      light: '#4caf50',
-      dark: '#1b5e20',
+      main: '#10B981',
+      light: '#34D399',
+      dark: '#059669',
     },
     background: {
-      default: '#f5f5f5',
-      paper: '#ffffff',
+      default: '#F9FAFB',
+      paper: '#FFFFFF',
+    },
+    text: {
+      primary: '#1F2937',
+      secondary: '#4B5563',
     },
   },
   typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-    ].join(','),
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: '2.5rem',
-      fontWeight: 500,
+      fontWeight: 800,
+      fontSize: '3.5rem',
     },
     h2: {
-      fontSize: '2rem',
-      fontWeight: 500,
+      fontWeight: 700,
+      fontSize: '3rem',
     },
     h3: {
-      fontSize: '1.75rem',
-      fontWeight: 500,
+      fontWeight: 700,
+      fontSize: '2.25rem',
     },
     h4: {
-      fontSize: '1.5rem',
-      fontWeight: 500,
+      fontWeight: 700,
+      fontSize: '1.875rem',
     },
     h5: {
-      fontSize: '1.25rem',
-      fontWeight: 500,
+      fontWeight: 600,
+      fontSize: '1.5rem',
     },
     h6: {
+      fontWeight: 600,
+      fontSize: '1.25rem',
+    },
+    subtitle1: {
+      fontSize: '1.125rem',
+      fontWeight: 500,
+    },
+    subtitle2: {
       fontSize: '1rem',
       fontWeight: 500,
     },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: 1.7,
+    },
+    body2: {
+      fontSize: '0.875rem',
+      lineHeight: 1.7,
+    },
+    button: {
+      textTransform: 'none',
+      fontWeight: 600,
+    },
+  },
+  shape: {
+    borderRadius: 12,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none',
-          borderRadius: 8,
+          borderRadius: '28px',
+          padding: '8px 24px',
+          fontSize: '1rem',
+        },
+        contained: {
+          boxShadow: 'none',
+          '&:hover': {
+            boxShadow: '0px 4px 12px rgba(59, 130, 246, 0.25)',
+          },
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          borderRadius: 12,
+          borderRadius: '16px',
+          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)',
         },
       },
     },

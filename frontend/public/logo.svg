@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cloud shape -->
+  <path d="M30 8C21.716 8 15 14.716 15 23C15 31.284 21.716 38 30 38C38.284 38 45 31.284 45 23C45 14.716 38.284 8 30 8ZM30 34C23.925 34 19 29.075 19 23C19 16.925 23.925 12 30 12C36.075 12 41 16.925 41 23C41 29.075 36.075 34 30 34Z" fill="url(#paint0_linear)"/>
+  
+  <!-- Scissors shape -->
+  <path d="M35 20L25 30M25 20L35 30" stroke="url(#paint1_linear)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Text "CloudTrim" -->
+  <text x="55" y="28" font-family="Arial" font-size="24" font-weight="bold" fill="#2B3A4A">
+    Cloud<tspan fill="url(#paint2_linear)">Trim</tspan>
+  </text>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="15" y1="8" x2="45" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="25" y1="20" x2="35" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="100" y1="8" x2="180" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+</svg>
