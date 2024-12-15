@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Typography,
   Grid,
@@ -22,6 +22,8 @@ import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import { SvgIconComponent } from '@mui/icons-material';
 import AIRecommendations from '../../components/ai/AIRecommendations';
 import apiService, { CostAnalysis, ResourceUtilization } from '../../services/api';
+import AWSCredentialsForm from '../../components/aws/AWSCredentialsForm';
+import AWSResourcesDashboard from '../../components/aws/AWSResourcesDashboard';
 
 interface MetricCardProps {
   title: string;
@@ -129,11 +131,18 @@ const ResourceUtilizationCard: React.FC<ResourceUtilizationCardProps> = ({ title
   </Box>
 );
 
+interface AWSCredentials {
+  accessKeyId: string;
+  secretAccessKey: string;
+  region: string;
+}
+
 const Dashboard: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [costData, setCostData] = useState<CostAnalysis | null>(null);
   const [utilization, setUtilization] = useState<ResourceUtilization | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isConfigured, setIsConfigured] = useState(false);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -163,6 +172,29 @@ const Dashboard: React.FC = () => {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
+  };
+
+  const handleAWSCredentials = async (credentials: AWSCredentials) => {
+    try {
+      // Send credentials to backend
+      const response = await fetch('http://localhost:8080/aws/configure', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to configure AWS credentials');
+      }
+
+      // If successful, show the dashboard
+      setIsConfigured(true);
+    } catch (error) {
+      console.error('Error configuring AWS:', error);
+      // Handle error (show error message to user)
+    }
   };
 
   return (
@@ -255,7 +287,11 @@ const Dashboard: React.FC = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <AIRecommendations />
+            {isConfigured ? (
+              <AWSResourcesDashboard />
+            ) : (
+              <AWSCredentialsForm onSubmit={handleAWSCredentials} />
+            )}
           </Grid>
         </Grid>
       </Container>
